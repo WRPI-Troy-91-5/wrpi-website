@@ -13,8 +13,9 @@
   - ~~Footer alignment should also be checked (see Issue #13)~~
 - If time (otherwise push to a later update)
   - Implement Live Pause
-  - Add playlist to site in some way (this will likely require a good bit of work)
   - Add a section for recorded content, like interviews and WRPI Live Dept. sessions
+  - Keep playing across page changes (see [here](https://stackoverflow.com/questions/18264284/continue-playing-audio-from-web-page-even-after-going-to-the-next-page) for a starting point; may be a pain
+  - Add playlist to site in some way (this will likely require a good bit of work)
 
 ## Relevant Issues
 - [#24: All links are incorrect absolute links and must be changed to / from /wrpi-website/ before deployment](https://github.com/khealio/wrpi-website/issues/24)
