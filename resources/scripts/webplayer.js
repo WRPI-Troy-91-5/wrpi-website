@@ -8,18 +8,18 @@ const play_text_fade_percent_step = 1;
 function toggle_play() {
     const player = document.getElementById("player");
     const play_button = document.getElementById("playpause");
-    const play_text = document.getElementById("play_indicator");
+    // const play_text = document.getElementById("play_indicator");
 
     if (player.paused) {
         player.play();
-        play_button.src = "./resources/pause.png";
-        play_text_fade_percent = 100;
+        play_button.src = "/wrpi-website/resources/img/pause.png";
+        // play_text_fade_percent = 100;
     }
     else {
         player.pause();
-        play_button.src = "./resources/play.png";
-        play_text_fade_percent = 0
-        play_text.style.opacity = "0%";
+        play_button.src = "/wrpi-website/resources/img/play.png";
+        // play_text_fade_percent = 0
+        // play_text.style.opacity = "0%";
 
     }
 }
@@ -31,6 +31,7 @@ function update_vol() {
     player.volume = (parseInt(volume.value)/100);
 }
 
+/* Removed due to space concerns
 function pulse_play_text() {
     // Condition for when the text should be hidden
     if (play_text_fade_percent === 0) {
@@ -55,10 +56,11 @@ function pulse_play_text() {
     const play_text = document.getElementById("play_indicator");
     play_text.style.opacity = play_text_fade_percent+"%";
 }
+*/
 
 $(document).ready(function () {
     $("#volume").on("input", update_vol);
 
     // Set the interval to pulse the "now playing..." text when the stream is playing
-    setInterval(pulse_play_text, 40);
+    // setInterval(pulse_play_text, 40);
 });

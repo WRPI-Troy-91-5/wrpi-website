@@ -19,13 +19,12 @@ include("../includes/header.inc.php");
         <a href=https://stream.wrpi.org/mp3-320.mp3.m3u>here</a>.
         Run VLC and play the downloaded file there.
         This file streams directly from our webstream to your device.
-        Apologies for any security warnings, we're working on it!
     </p>
 </div>
 
 <!-- Broadcast Map -->
 <div id="broadcastrange">
-    <img src="../resources/broadcastrange.png" frameborder="0" scrolling="no" alt="WRPI Coverage Map">
+    <img src="../resources/img/broadcastrange.png" frameborder="0" scrolling="no" alt="WRPI Coverage Map">
 </div>
 
 <?php
