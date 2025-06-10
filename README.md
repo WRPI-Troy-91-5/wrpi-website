@@ -11,8 +11,9 @@
   - JavaScript requires checking and refactoring
   - ~~Polish menu buttons (see Issue #12)~~
   - ~~Footer alignment should also be checked (see Issue #13)~~
-- If time
+- If time (otherwise push to a later update)
   - Implement Live Pause
+  - Add playlist to site in some way (this will likely require a good bit of work)
   - Add a section for recorded content, like interviews and WRPI Live Dept. sessions
 
 ## Relevant Issues
