@@ -2,7 +2,7 @@
 <div>
     <div id="audio-player">
         <audio id="player" src="https://stream.wrpi.org/mp3-320.mp3"></audio>
-        <input id="playpause" type="image" src="./resources/play.png" onclick="toggle_play();" alt="Play/pause button">
+        <input id="playpause" type="image" src="/wrpi-website/resources/play.png" onclick="toggle_play();" alt="Play/pause button">
         <label for="volume">Volume<input id="volume" class="slider" type="range" min="0" max="100" value="100"></label>
     </div>
 

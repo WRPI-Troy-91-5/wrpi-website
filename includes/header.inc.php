@@ -13,41 +13,41 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Gloock">
 
     <!-- Favicon -->
-    <link rel='icon' href='../resources/favicon.ico' type='image/x-icon'>
+    <link rel='icon' href='/wrpi-website/resources/favicon.ico' type='image/x-icon'>
 
     <!-- jQuery dependency for other scripts -->
     <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
 
     <!-- Audio player script -->
-    <script src="../resources/webplayer.js"></script>
+    <script src="/wrpi-website/resources/webplayer.js"></script>
 </head>
 
 <body>
 <!-- Banner -->
 <div class="main-banner">
-    <script src="../resources/dropdown.js"></script>
+    <script src="/wrpi-website/resources/dropdown.js"></script>
     <div class="main-banner-content">
         <div class="home-logo">
             <!-- Logo -->
-            <a href="../">
-                <img class="home-logo" src='../resources/logo.png' alt="WRPI Logo">
+            <a href="/wrpi-website/">
+                <img class="home-logo" src='/wrpi-website/resources/logo.png' alt="WRPI Logo">
             </a>
         </div>
 
         <div class="dropdown">
             <button onclick="openDropdown('links-1')" class="dropbtn">Engage</button>
             <div class="dropdown-content" id="links-1">
-                <a href="../listen/">How To Listen</a>
-                <a href="../about/">About Us</a>
+                <a href="/wrpi-website/listen/">How To Listen</a>
+                <a href="/wrpi-website/about/">About Us</a>
             </div>
         </div>
 
         <div class="dropdown">
             <button onclick="openDropdown('links-2')" class="dropbtn">Reach Out</button>
             <div class="dropdown-content" id="links-2">
-                <a href="../afterdark/">After Dark</a>
-                <a href="../wgoh/">What's Going On Here?</a>
-                <a href="../contact/">Contact Info</a>
+                <a href="/wrpi-website/afterdark/">After Dark</a>
+                <a href="/wrpi-website/wgoh/">What's Going On Here?</a>
+                <a href="/wrpi-website/contact/">Contact Info</a>
             </div>
         </div>
     </div>

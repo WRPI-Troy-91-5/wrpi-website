@@ -110,13 +110,12 @@ body {
 #audio-player {
     display: flex;
     position: relative;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     gap: 25px;
     width: 100%;
     max-width: 200px;
-    margin: 0 auto;
-    padding-top: 5px;
+    padding: 10px;
 }
 
 #audio-player #playpause {
@@ -125,7 +124,7 @@ body {
     background-color: white;
     font-family: "Cabin", sans-serif;
     cursor: pointer;
-    text-align: center;
+    text-align: left;
     border-radius: 5px;
     padding: 2px;
     flex-shrink: 0;
@@ -187,13 +186,6 @@ a:link {
     max-width: 495px;
     width: 98%;
     border-radius: 5px;
-}
-
-#audio-player {
-    display: flex;
-    justify-content: center;
-    position: sticky;
-    bottom: 0;
 }
 
 .footer {
