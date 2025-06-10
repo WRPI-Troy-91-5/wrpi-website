@@ -3,6 +3,7 @@
 body {
     font-family: "Cabin", sans-serif;
     color: #c3c3c3;
+    background-color: #4e1e1e;
 }
 
 .main-banner {
@@ -106,6 +107,37 @@ body {
     line-height: 1.7em;
 }
 
+#audio-player {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+    padding-top: 5px;
+}
+
+#audio-player #playpause {
+    width: 32px;
+    height: 38px;
+    background-color: white;
+    font-family: "Cabin", sans-serif;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+    padding: 2px;
+    flex-shrink: 0;
+}
+
+#play_indicator {
+    margin: 0 auto;
+    padding-left: 4em;
+    flex-shrink: 0;
+    opacity: 0;
+}
+
 .home-logo {
     display: inline-block;
     position: relative;
@@ -121,10 +153,6 @@ body {
     width: 150px;
     margin-left: auto;
     margin-right: 0;
-}
-
-body {
-    background-color: #4e1e1e;
 }
 
 a:link {
