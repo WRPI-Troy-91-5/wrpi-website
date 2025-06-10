@@ -7,6 +7,7 @@
 
 ## Goals
 - Required
+  - Figure out how to change volume bar color
   - Left-aligning the site and adding more content to fill in the right side
   - JavaScript requires checking and refactoring
   - ~~Polish menu buttons (see Issue #12)~~
