@@ -5,12 +5,14 @@ include("includes/header.inc.php");
 <div class="body-text">
     <!-- Page heading -->
     <h1 class="main-title">
-        Welcome to WRPI Troy!
+        10,000 watts of pure college radio on 91.5 FM.
     </h1>
 
     <p class="main-subtitle">
-        Listen to us online here! Click <a href="listen/">here</a>
-        for other ways to tune in.
+        We are the New York Capital Region’s modern radio, spreading tunes and talk,
+        connecting communities from Upstate New York to Western Massachusetts.
+        Run by RPI students and community members, we keep our community
+        together.
     </p>
 </div>
 
