@@ -17,7 +17,7 @@ include("../includes/header.inc.php");
             <br><br>
             <em>Please send all listings at least one week in advance!</em>
             <br><br>
-            Looking to advertise a concert? You may be looking for <a href="../afterdark/">After Dark</a>,
+            Looking to advertise a concert? You may be looking for <a href="/afterdark/">After Dark</a>,
             WRPI's <em>concert calendar</em> of events.
         </p>
     </div>
