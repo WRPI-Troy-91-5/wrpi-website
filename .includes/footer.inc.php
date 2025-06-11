@@ -23,9 +23,9 @@
         See contact page for more details
     </div>
     <div id="footer-right">
-        <a href="https://github.com/khealio/wrpi-website">WRPI.org Open Source Project</a>,
+        <a href="https://github.com/khealio/wrpi-website">WRPI.org Open Source Project</a>
         <br>
-        hosted with <3 by the WRPI Engineering Dept.
+        Hosted with <3 by the WRPI Engineering Dept.
         <br>
         Visit the project to learn more and contribute!
     </div>
