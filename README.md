@@ -3,12 +3,11 @@
 ## Needed to Deploy
 - Fix absolute pathing for deployment
 - Have player stick to the bottom of the screen (like header to the top)
-- Fix Issue #23 (dropdown menus going off-screen)
-- If time, Live Pause
 
 ## Goals
 - Required
   - Figure out how to change volume bar color
+  - Fix Issue #23 (dropdown menus going off-screen)
   - Left-aligning the site and adding more content to fill in the right side
   - JavaScript requires checking and refactoring
   - ~~Polish menu buttons (see Issue #12)~~
