@@ -10,7 +10,7 @@ include("../includes/header.inc.php");
 
         <p class="main-subtitle">
             We are WRPI, Rensselaer Polytechnic Institute's student-run broadcast radio.
-            We have been on-air and student-run since 1947, and broadcasting on
+            We have been on-air since 1947, and broadcasting on
             91.5 FM since 1957. Thanks for supporting us!
             <br><br>
             For those of you wanting to learn more about WRPI and our history, keep an eye
