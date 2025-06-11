@@ -1,0 +1,20 @@
+#calendar iframe {
+    margin: 1%;
+    width: 98%;
+    max-width: 900px;
+    min-height: 30.7em;
+    border-radius: 5px;
+}
+
+#calendar-right {
+    display: inline-block;
+    float: right;
+    margin: 1%;
+}
+
+#calendar-right iframe {
+    width: 98vw;
+    max-width: 500px;
+    min-height: 30.7em;
+    border-radius: 5px;
+}
