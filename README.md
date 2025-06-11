@@ -1,22 +1,14 @@
-# Design Refactor
+# WRPI.org - The Upstate Underground's Homepage
+Hello! This is the project page for [WRPI.org](http://wrpi.org), the website for Rensselaer Polytechnic Institute's independent, student-run radio station
+located in Troy, NY. We broadcast on 91.5 FM in a ~75-mile radius out from our transmitter in North Greenbush. If you'd like to contribute to the project, read on :)
+Keep it locked!
 
-## Current Issues
-- [#24: All links are incorrect absolute links and must be changed to / from /wrpi-website/ before deployment](https://github.com/khealio/wrpi-website/issues/24)
-- [#23: Dropdown menus go off-screen on mobile devices](https://github.com/khealio/wrpi-website/issues/23)
-  - This may be solved by implementing a hamburger menu for mobile devices
-- [#25: Footers look weird on mobile](https://github.com/khealio/wrpi-website/issues/25)
+## How to Contribute
+Clone our Git repo, make your changes, and make a pull request documenting your changes *as extensively as possible.* Your changes will
+be carefully inspected and you may be asked to speak to specific aspects of your work. We greatly appreciate contributions, and know
+that your work will be immediately apparent to the dedicated WRPI listeners of New York's Capital Region!
 
-## Goals
-- Stylistic and functional updates
-  - Have player stick to the bottom of the screen (like header to the top)
-  - Figure out how to change volume bar color
-  - JavaScript requires checking and refactoring
-- Changes requested by WRPI members
-  - Implement Live Pause
-  - Add a section for recorded content, like interviews and WRPI Live Dept. sessions
-  - Keep playing across page changes (see [here](https://stackoverflow.com/questions/18264284/continue-playing-audio-from-web-page-even-after-going-to-the-next-page) for a starting point)
-  - Add playlist to site in some way (this will likely require a good bit of work involving DAD)
-- Completed
-  - ~~Left-aligning the site and adding more content to fill in the right side~~
-  - ~~Polish menu buttons (see Issue #12)~~
-  - ~~Footer alignment should also be checked (see Issue #13)~~ 
+## Issues
+Please open an issue if you have any functional issues with the website. If an identical or similar issue already exists, please add a 
+comment to the existing issue describing your experience. Feel free to try your hand at fixing the issue yourself, and make a PR if you
+manage to fix it!
