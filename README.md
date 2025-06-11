@@ -1,13 +1,15 @@
 # Design Refactor
 
-## Needed to Deploy
-- Fix absolute pathing for deployment
+## Current Issues
+- [#24: All links are incorrect absolute links and must be changed to / from /wrpi-website/ before deployment](https://github.com/khealio/wrpi-website/issues/24)
+- [#23: Dropdown menus go off-screen on mobile devices](https://github.com/khealio/wrpi-website/issues/23)
+  - This may be solved by implementing a hamburger menu for mobile devices
+- [#25: Footers look weird on mobile](https://github.com/khealio/wrpi-website/issues/25)
 
 ## Goals
 - Stylistic and functional updates
   - Have player stick to the bottom of the screen (like header to the top)
   - Figure out how to change volume bar color
-  - Fix Issue #23 (dropdown menus going off-screen)
   - JavaScript requires checking and refactoring
 - Changes requested by WRPI members
   - Implement Live Pause
@@ -18,7 +20,3 @@
   - ~~Left-aligning the site and adding more content to fill in the right side~~
   - ~~Polish menu buttons (see Issue #12)~~
   - ~~Footer alignment should also be checked (see Issue #13)~~ 
-
-## Relevant Issues
-- [#24: All links are incorrect absolute links and must be changed to / from /wrpi-website/ before deployment](https://github.com/khealio/wrpi-website/issues/24)
-- [#23: Dropdown menus go off-screen on mobile devices](https://github.com/khealio/wrpi-website/issues/23)
