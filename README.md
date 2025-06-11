@@ -2,6 +2,7 @@
 
 ## Needed to Deploy
 - Fix absolute pathing for deployment
+- Have player stick to the bottom of the screen (like header to the top)
 - Fix Issue #23 (dropdown menus going off-screen)
 - If time, Live Pause
 
