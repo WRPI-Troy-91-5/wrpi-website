@@ -1,9 +1,9 @@
-@import "/resources/styles/banner.css";
-@import "/resources/styles/calendar.css";
-@import "/resources/styles/fonts.css";
-@import "/resources/styles/footer.css";
-@import "/resources/styles/page-framework.css";
-@import "/resources/styles/player.css";
+@import "/.resources/styles/banner.css";
+@import "/.resources/styles/calendar.css";
+@import "/.resources/styles/fonts.css";
+@import "/.resources/styles/footer.css";
+@import "/.resources/styles/page-framework.css";
+@import "/.resources/styles/player.css";
 
 .main-title {
     margin-bottom: 0.5em;

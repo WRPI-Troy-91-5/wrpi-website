@@ -1,5 +1,5 @@
 <?php
-include("../includes/header.inc.php");
+include("../.includes/header.inc.php");
 ?>
 
     <div class="body-text">
@@ -26,9 +26,9 @@ include("../includes/header.inc.php");
 
     <!-- Broadcast Map -->
     <div id="broadcastrange">
-        <img src="/resources/img/broadcastrange.png" frameborder="0" scrolling="no" alt="WRPI Coverage Map. Our range
+        <img src="/.resources/img/broadcastrange.png" frameborder="0" scrolling="no" alt="WRPI Coverage Map. Our range
         is a roughly-75-mile radius out from North Greenbush, NY.">
     </div>
 
 <?php
-include("../includes/footer.inc.php");
+include("../.includes/footer.inc.php");

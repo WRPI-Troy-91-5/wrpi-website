@@ -1,5 +1,5 @@
 <?php
-include("../includes/header.inc.php");
+include("../.includes/header.inc.php");
 ?>
 
     <div class="body-text">
@@ -29,4 +29,4 @@ include("../includes/header.inc.php");
     </div>
 
 <?php
-include("../includes/footer.inc.php");
+include("../.includes/footer.inc.php");

@@ -12,11 +12,11 @@ function toggle_play() {
 
     if (player.paused) {
         player.play();
-        play_button.src = "/resources/img/pause.png";
+        play_button.src = "/.resources/img/pause.png";
         // play_text_fade_percent = 100;
     } else {
         player.pause();
-        play_button.src = "/resources/img/play.png";
+        play_button.src = "/.resources/img/play.png";
         // play_text_fade_percent = 0
         // play_text.style.opacity = "0%";
 
