@@ -6,7 +6,7 @@ DIN 1451 font
     font-family: 'DIN 1451 Std Engschrift';
     font-style: normal;
     font-weight: normal;
-    src: local('DIN 1451 Std Engschrift'), url('/wrpi-website/resources/fonts/DINEngschriftStd.woff') format('woff');
+    src: local('DIN 1451 Std Engschrift'), url('/resources/fonts/DINEngschriftStd.woff') format('woff');
 }
 
 
@@ -14,5 +14,5 @@ DIN 1451 font
     font-family: 'DIN 1451 Std Mittelschrift';
     font-style: normal;
     font-weight: normal;
-    src: local('DIN 1451 Std Mittelschrift'), url('/wrpi-website/resources/fonts/DINMittelschriftStd.woff') format('woff');
+    src: local('DIN 1451 Std Mittelschrift'), url('/resources/fonts/DINMittelschriftStd.woff') format('woff');
 }
