@@ -14,7 +14,8 @@
     <link rel='icon' href='/wrpi-website/resources/img/favicon.ico' type='image/x-icon'>
 
     <!-- jQuery dependency for other scripts -->
-    <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js"
+            integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
 
     <!-- Audio player script -->
     <script src="/wrpi-website/resources/scripts/webplayer.js"></script>
@@ -65,4 +66,4 @@
     </div>
 </div>
 
-<main class="main-content">
+<main class="content-wrapper">

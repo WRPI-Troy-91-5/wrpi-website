@@ -1,0 +1,25 @@
+/* Resets browser default margin and padding */
+* {
+    margin: 0;
+    padding: 0
+}
+
+/* Ensures html and body fill the viewport */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures body takes full height */
+    font-family: "DIN 1451 Std Mittelschrift", sans-serif;
+    color: #c3c3c3;
+    background-color: #730f17ff;
+}
+
+/* Fills remaining space to ensure footer is at page bottom */
+.content-wrapper {
+    flex: 1;
+}

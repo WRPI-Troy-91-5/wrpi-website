@@ -14,8 +14,7 @@ function toggle_play() {
         player.play();
         play_button.src = "/wrpi-website/resources/img/pause.png";
         // play_text_fade_percent = 100;
-    }
-    else {
+    } else {
         player.pause();
         play_button.src = "/wrpi-website/resources/img/play.png";
         // play_text_fade_percent = 0
@@ -28,7 +27,7 @@ function update_vol() {
     const volume = document.getElementById("volume");
     const player = document.getElementById("player");
 
-    player.volume = (parseInt(volume.value)/100);
+    player.volume = (parseInt(volume.value) / 100);
 }
 
 /* Removed due to space concerns

@@ -1,0 +1,16 @@
+.footer {
+    position: relative;
+    background-color: #231f20ff;
+    padding: 10px;
+}
+
+#footer-left {
+    display: inline-block;
+    float: left;
+}
+
+#footer-right {
+    text-align: right;
+    display: inline-block;
+    float: right;
+}
