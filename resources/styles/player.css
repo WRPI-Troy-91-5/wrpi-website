@@ -5,11 +5,11 @@
     z-index: 1000;
     align-items: center;
     background-color: #231f20ff;
-    gap: 25px;
+    gap: 15px;
     padding: 10px 0 10px 1em;
 }
 
-#audio-player #playpause {
+#audio-player .control-button {
     width: 32px;
     height: 38px;
     background-color: white;

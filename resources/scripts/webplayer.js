@@ -1,9 +1,9 @@
 // Global variables needed for pulsing "now playing..." text
-let play_text_fade_percent = 0;
-let play_text_fade_percent_inc = false;
-const play_text_fade_percent_max = 100;
-const play_text_fade_percent_min = 40;
-const play_text_fade_percent_step = 1;
+// let play_text_fade_percent = 0;
+// let play_text_fade_percent_inc = false;
+// const play_text_fade_percent_max = 100;
+// const play_text_fade_percent_min = 40;
+// const play_text_fade_percent_step = 1;
 
 function toggle_play() {
     const player = document.getElementById("player");
@@ -12,15 +12,27 @@ function toggle_play() {
 
     if (player.paused) {
         player.play();
-        play_button.src = "/resources/img/pause.png";
+        play_button.src = "/wrpi-website/resources/img/pause.png";
         // play_text_fade_percent = 100;
+    } else if (player.muted) {
+        player.muted = false;
+        play_button.src = "/wrpi-website/resources/img/pause.png";
+
     } else {
         player.pause();
-        play_button.src = "/resources/img/play.png";
+        play_button.src = "/wrpi-website/resources/img/play.png";
         // play_text_fade_percent = 0
         // play_text.style.opacity = "0%";
 
     }
+}
+
+function toggle_mute() {
+    const player = document.getElementById("player");
+    const play_button = document.getElementById("playpause");
+
+    player.muted = true;
+    play_button.src = "/wrpi-website/resources/img/play.png";
 }
 
 function update_vol() {
