@@ -63,6 +63,47 @@
                 <a href="https://open.spotify.com/user/l3t5b5q04i15d795pxl4pb9hq">Spotify</a>
             </div>
         </div>
+
+        <!-- Proof-of-concept nested dropdown -->
+        <div class="dropdown">
+            <button class="dropbtn">Proof-of-Concept</button>
+            <div class="dropdown-content">
+
+                <!-- Nested dropdown button -->
+                <div class="dropdown-1">
+                    <button class="dropbtn-1">Info</button>
+                    <div class="dropdown-content-1">
+                        <a href="/wrpi-website/about/">About Us</a>
+                        <a href="/wrpi-website/contact/">Contact Info</a>
+                        <a href="https://rpi.edu">
+                            About RPI
+                            <img class="rpi-logo" src="/wrpi-website/resources/img/rpi-logo.png" alt="RPI Logo">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="dropdown-1">
+                    <button class="dropbtn-1">Programs</button>
+                    <div class="dropdown-content-1">
+                        <a href="/wrpi-website/listen/">How To Listen</a>
+                        <a href="/wrpi-website/afterdark/">After Dark</a>
+                        <a href="/wrpi-website/wgoh/">What's Going On Here?</a>
+                    </div>
+                </div>
+
+                <div class="dropdown-1">
+                    <button class="dropbtn-1">Socials</button>
+                    <div class="dropdown-content-1">
+                        <a href="https://www.instagram.com/wrpitroy/">Instagram</a>
+                        <a href="https://www.facebook.com/WRPI91.5/">Facebook</a>
+                        <a href="https://x.com/wrpi">X (Twitter)</a>
+                        <a href="https://www.youtube.com/channel/UCSolGCqgW-XZlphqZbOxf0Q">YouTube</a>
+                        <a href="https://open.spotify.com/user/l3t5b5q04i15d795pxl4pb9hq">Spotify</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
 </div>
 

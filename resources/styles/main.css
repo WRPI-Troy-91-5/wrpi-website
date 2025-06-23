@@ -5,6 +5,9 @@
 @import "/wrpi-website/resources/styles/page-framework.css";
 @import "/wrpi-website/resources/styles/player.css";
 
+/* Proof-of-concept nested dropdown */
+@import "/wrpi-website/resources/styles/nested-dropdown.css";
+
 .main-title {
     margin-bottom: 0.5em;
 }
