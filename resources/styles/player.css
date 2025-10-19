@@ -26,6 +26,13 @@
     opacity: 0;
 }
 
+#streamlink {
+   background: none;
+   border: none;
+   color: #c3c3c3;
+   flex-shrink 0;
+}
+
 input#volume {
     margin-left: 1em;
     vertical-align: middle;
