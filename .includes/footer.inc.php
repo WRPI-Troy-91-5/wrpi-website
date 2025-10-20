@@ -19,7 +19,7 @@
         </script>
         
 
-        <button id="streamlink" onclick="copyLink()"> <img src="resources/img/link.svg"/> </button>
+        <button id="streamlink" onclick="copyLink()" alt="copy stream link"> <img src="resources/img/link.svg"/> </button>
         <div id="copyconfirm"> Copied to clipboard </div>
 
         <!-- Commented out due to spacing concerns -->
