@@ -10,11 +10,13 @@
         <script>
             var copyLink = () => {
                 navigator.clipboard.writeText("https://stream.wrpi.org/mp3-320.mp3");
-                console.log(document.getElementById("copyconfirm").classList.toggle('blink-in'));
-                delay().then(() => {document.getElementById("copyconfirm").classList.toggle('blink-in');});
+                document.getElementById("copyconfirm").classList.toggle('blink-in');
+                document.getElementById("streamlink").classList.toggle('shake');
+                delay(1000).then(() => {document.getElementById("copyconfirm").classList.toggle('blink-in');});
+                delay(200).then(() => {document.getElementById("streamlink").classList.toggle('shake');});
             }
-            var delay = () => {
-                return new Promise(resolve => setTimeout(resolve, 1000));
+            var delay = (ms) => {
+                return new Promise(resolve => setTimeout(resolve, ms));
             }
         </script>
         
