@@ -8,7 +8,7 @@
                alt="Play/pause button">
         <label for="volume">Volume<input id="volume" class="slider" type="range" min="0" max="100" value="100"></label>
         <script>var copyLink = () => {navigator.clipboard.writeText("https://stream.wrpi.org/mp3-320.mp3"); alert("Copied: https://stream.wrpi.org/mp3-320.mp3");}</script>
-        <button id="streamlink" onclick="copyLink()"> <img src="resources/img/share-2-svgrepo-com.svg"/> </button>
+        <button id="streamlink" onclick="copyLink()"> <img src="resources/img/outlink.svg"/> </button>
         
         <!-- Commented out due to spacing concerns -->
         <!-- <p id="play_indicator">now playing...</p> -->
