@@ -30,7 +30,10 @@
    background: none;
    border: none;
    color: #c3c3c3;
-   flex-shrink 0;
+}
+
+#streamlink:active {
+    animation: shake  0.2s;
 }
 
 #copyconfirm {
@@ -38,8 +41,7 @@
    position: relative;
    display: block;
    opacity: 0;
-   width: 10em;
-   height: 2em;
+   padding: 0.5em;
    border-radius: 5px;
    background-color: black;
    text-align: center;
@@ -62,4 +64,11 @@ input#volume {
       0% { opacity: 0;}
      50% { opacity: 1;}
     100% { opacity: 0;}
+}
+
+@keyframes shake {
+      0% { transform: rotate(0);}
+     25% { transform: rotate(20deg);}
+     75% { transform: rotate(-20deg);}
+    100% { transform: rotate(0);}
 }
