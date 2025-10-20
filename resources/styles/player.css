@@ -72,3 +72,9 @@ input#volume {
      75% { transform: rotate(-20deg);}
     100% { transform: rotate(0);}
 }
+
+@supports (-webkit-touch-callout: none) {
+  .ios-hidden {
+    display: none;
+  }
+}

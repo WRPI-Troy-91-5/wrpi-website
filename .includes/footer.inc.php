@@ -6,7 +6,9 @@
         <audio id="player" src="https://stream.wrpi.org/mp3-320.mp3"></audio>
         <input id="playpause" type="image" src="/resources/img/play.png" onclick="toggle_play();"
                alt="Play/pause button">
-        <label for="volume">Volume<input id="volume" class="slider" type="range" min="0" max="100" value="100"></label>
+        <label for="volume" class='ios-hidden'>Volume<input id="volume" class="slider ios-hidden" type="range" min="0" max="100" value="100"></label>
+        
+        
         <script>
             var copyLink = () => {
                 navigator.clipboard.writeText("https://stream.wrpi.org/mp3-320.mp3");
