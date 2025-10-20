@@ -30,10 +30,47 @@
    background: none;
    border: none;
    color: #c3c3c3;
-   flex-shrink 0;
+}
+
+
+
+#copyconfirm {
+   float: left; 
+   position: relative;
+   display: block;
+   opacity: 0;
+   padding: 0.5em;
+   border-radius: 5px;
+   background-color: black;
+   text-align: center;
+   align-content: center;
+   transform: translate(-10%,0);
 }
 
 input#volume {
     margin-left: 1em;
     vertical-align: middle;
+}
+
+
+.blink-in {
+    animation: blink ease 1s;
+    animation-fill-mode: forwards
+}
+.shake {
+    animation: shake ease 0.2s;
+    animation-fill-mode: forwards
+}
+
+@keyframes blink {
+      0% { opacity: 1;}
+     50% { opacity: 1;}
+    100% { opacity: 0;}
+}
+
+@keyframes shake {
+      0% { transform: rotate(0);}
+     25% { transform: rotate(20deg);}
+     75% { transform: rotate(-20deg);}
+    100% { transform: rotate(0);}
 }
