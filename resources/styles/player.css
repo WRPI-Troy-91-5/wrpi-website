@@ -33,7 +33,33 @@
    flex-shrink 0;
 }
 
+#copyconfirm {
+   float: left; 
+   position: relative;
+   display: block;
+   opacity: 0;
+   width: 10em;
+   height: 2em;
+   border-radius: 5px;
+   background-color: black;
+   text-align: center;
+   align-content: center;
+   transform: translate(-10%,0);
+}
+
 input#volume {
     margin-left: 1em;
     vertical-align: middle;
+}
+
+
+.blink-in {
+    animation: blink ease 1s;
+    animation-fill-mode: forwards
+}
+
+@keyframes blink {
+      0% { opacity: 0;}
+     50% { opacity: 1;}
+    100% { opacity: 0;}
 }

@@ -7,8 +7,18 @@
         <input id="playpause" type="image" src="/resources/img/play.png" onclick="toggle_play();"
                alt="Play/pause button">
         <label for="volume">Volume<input id="volume" class="slider" type="range" min="0" max="100" value="100"></label>
-        <script>var copyLink = () => {navigator.clipboard.writeText("https://stream.wrpi.org/mp3-320.mp3"); alert("Copied: https://stream.wrpi.org/mp3-320.mp3");}</script>
+        <script>
+            var copyLink = () => {
+                navigator.clipboard.writeText("https://stream.wrpi.org/mp3-320.mp3");
+                console.log(document.getElementById("copyconfirm").classList.toggle('blink-in'));
+                delay().then(() => {document.getElementById("copyconfirm").classList.toggle('blink-in');});
+            }
+            var delay = () => {
+                return new Promise(resolve => setTimeout(resolve, 1000));
+            }
+        </script>
         <button id="streamlink" onclick="copyLink()"> <img src="resources/img/share-2-svgrepo-com.svg"/> </button>
+        <div id="copyconfirm"> Copied to clipboard </div>
         
         <!-- Commented out due to spacing concerns -->
         <!-- <p id="play_indicator">now playing...</p> -->
