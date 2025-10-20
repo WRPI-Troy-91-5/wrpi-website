@@ -17,9 +17,11 @@
                 return new Promise(resolve => setTimeout(resolve, 1000));
             }
         </script>
-        <button id="streamlink" onclick="copyLink()"> <img src="resources/img/share-2-svgrepo-com.svg"/> </button>
-        <div id="copyconfirm"> Copied to clipboard </div>
         
+
+        <button id="streamlink" onclick="copyLink()"> <img src="resources/img/link.svg"/> </button>
+        <div id="copyconfirm"> Copied to clipboard </div>
+
         <!-- Commented out due to spacing concerns -->
         <!-- <p id="play_indicator">now playing...</p> -->
     </div>
