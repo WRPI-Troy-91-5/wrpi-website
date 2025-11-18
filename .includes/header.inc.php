@@ -37,7 +37,7 @@
             <div class="dropdown-content">
                 <a href="/about/">About Us</a>
                 <a href="/contact/">Contact Info</a>
-                <a href="https://rpi.edu">
+                <a href="https://rpi.edu" target="_blank">
                     About RPI
                     <img class="rpi-logo" src="/resources/img/rpi-logo.png" alt="RPI Logo">
                 </a>
@@ -56,11 +56,11 @@
         <div class="dropdown">
             <button class="dropbtn">Socials</button>
             <div class="dropdown-content">
-                <a href="https://www.instagram.com/wrpitroy/">Instagram</a>
-                <a href="https://www.facebook.com/WRPI91.5/">Facebook</a>
-                <a href="https://x.com/wrpi">X (Twitter)</a>
-                <a href="https://www.youtube.com/channel/UCSolGCqgW-XZlphqZbOxf0Q">YouTube</a>
-                <a href="https://open.spotify.com/user/l3t5b5q04i15d795pxl4pb9hq">Spotify</a>
+                <a href="https://www.instagram.com/wrpitroy/" target="_blank">Instagram</a>
+                <a href="https://www.facebook.com/WRPI91.5/" target="_blank">Facebook</a>
+                <a href="https://x.com/wrpi" target="_blank">X (Twitter)</a>
+                <a href="https://www.youtube.com/channel/UCSolGCqgW-XZlphqZbOxf0Q" target="_blank">YouTube</a>
+                <a href="https://open.spotify.com/user/l3t5b5q04i15d795pxl4pb9hq" target="_blank">Spotify</a>
             </div>
         </div>
     </div>
