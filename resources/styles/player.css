@@ -1,7 +1,7 @@
 #audio-player {
     display: flex;
     position: sticky;
-    bottom: 0;
+    bottom: -0.1em;
     z-index: 1000;
     align-items: center;
     background-color: #231f20ff;

@@ -37,6 +37,7 @@
             <div class="dropdown-content">
                 <a href="/about/">About Us</a>
                 <a href="/contact/">Contact Info</a>
+                <a href="/join/">Join Us!</a>
                 <a href="https://rpi.edu" target="_blank">
                     About RPI
                     <img class="rpi-logo" src="/resources/img/rpi-logo.png" alt="RPI Logo">

@@ -34,14 +34,14 @@
     <div id="footer-left">
         WRPI Troy, 91.5 FM and streaming at WRPI.org
         <br>
-        1 WRPI Plz, Troy, NY 12180-3590
+        1 WRPI Plaza, Troy, NY 12180-3590
         <br>
-        See contact page for more details
+        See <a href="/contact/">contact page</a> for more details
     </div>
     <div id="footer-right">
-        <a href="https://github.com/khealio/wrpi-website">WRPI.org Open Source Project</a>
+        <a href="https://github.com/khealio/wrpi-website" target="_blank">WRPI.org Project</a>
         <br>
-        Hosted with <3 by the WRPI Engineering Dept.
+        Built and maintained by WRPI members.
         <br>
         Visit the project to learn more and contribute!
     </div>

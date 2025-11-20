@@ -9,9 +9,11 @@ include(".includes/header.inc.php");
         </h1>
 
         <p class="main-subtitle">
-            We are the New York Capital Region’s modern radio, spreading tunes and talk,
+            We are the New York Capital Region's modern radio, spreading tunes and talk,
             connecting communities from Upstate New York to Southwestern Vermont and Western Massachusetts.
             Run by RPI students, we keep our community together.
+            <br>
+            <b>Are you an RPI student interested in joining?</b> Go to the Join Us! page under Info to learn how!
         </p>
     </div>
 
