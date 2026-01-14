@@ -10,9 +10,9 @@ include("../.includes/header.inc.php");
 
         <p class="main-subtitle">
             <b>Meetings</b><br>
-            Regular meetings are every Thursday at 6pm in the WRPI Lounge, DCC 113. We have GBMs
+            Regular meetings are every Monday at 6:30pm in the WRPI Lounge, DCC 113. We have GBMs
             (general body meetings) once a month on the first Sunday (with some variability depending 
-            on breaks, events, etc.)
+            on breaks, events, etc).
             <br><br>
             <b>Finding the Station</b><br>
             If you're near the Forge, go through the door and down the stairs opposite the Forge and 
