@@ -38,7 +38,7 @@
         <br>
         See <a href="/contact/">contact page</a> for more details
         <br>
-        <a href="https://publicfiles.fcc.gov/fm-profile/WRPI?id=55742">FCC Public File</a>
+        <a href="https://publicfiles.fcc.gov/fm-profile/WRPI?id=55742" target="_blank">FCC Public File</a>
     </div>
     <div id="footer-right">
         <a href="https://github.com/khealio/wrpi-website" target="_blank">WRPI.org Project</a>
