@@ -19,6 +19,12 @@
 
     <!-- Audio player script -->
     <script src="/resources/scripts/webplayer.js"></script>
+
+    <!-- Embedded Content -->
+    <meta content="/resources/img/jollyrocker.img" property="og:image" />
+    <meta content="WRPI Troy" property="og:title" />
+    <meta content="Listen in on 91.5 FM or at wrpi.org" property="og:description" />
+    <meta content="https://wrpi.org" property="og:url" />
 </head>
 
 <body>
