@@ -70,6 +70,10 @@
                 <a href="https://open.spotify.com/user/l3t5b5q04i15d795pxl4pb9hq" target="_blank">Spotify</a>
             </div>
         </div>
+
+        <div class="dropdown">
+            <a class="dropbtn bannerbtn" href="/log">Audio Log</a>
+        </div>
     </div>
 </div>
 
