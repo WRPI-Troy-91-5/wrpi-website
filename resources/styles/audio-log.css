@@ -1,0 +1,19 @@
+#datetime-form {
+    margin: 1.5em 1.5em 0;
+}
+
+#datetime-form-container {
+    display: flex;
+}
+
+#datetime-form-start, #datetime-form-end, #datetime-form {
+    width: fit-content;
+}
+
+#datetime-form-start {
+    margin-right: 48px;
+}
+
+#datetime-form-submit {
+    text-align: center;
+}
