@@ -16,24 +16,33 @@ include("../.includes/header.inc.php");
     </div>
     <!-- Main form -->
     <br>
-    <form id="datetime-form">
+    <form id="datetime-form" method="post">
         <div id="datetime-form-container">
             <div id="datetime-form-start">
                 <h2>Starting Timeframe</h2>
-                <input type="date">
-                <input type="time">
+                <input required name="start-date" type="date">
+                <input required name="start-time" type="time">
             </div>
     
             <div id="datetime-form-end">
                 <h2>Ending Timeframe</h2>
-                <input type="date">
-                <input type="time">
+                <input required name="end-date" type="date">
+                <input required name="end-time" type="time">
             </div>
         </div>
 
         <br><br>
         <div id="datetime-form-submit">
-            <button>Submit</button>
+            <?php
+            if(isset($_POST['start-date'])) {
+                //
+                // Process Form Input Here
+                //
+                echo "<p>Loading...</p>";
+                echo "<p>" . $_POST["start-date"] . "</p>";
+            }
+            ?>
+            <button type="submit" name="submit">Submit</button>
         </div>
     </form>
 
