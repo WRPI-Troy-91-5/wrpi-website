@@ -66,7 +66,6 @@ include("../.includes/header.inc.php");
             }
             const log_output = document.getElementById("log-retrieval-output");
             if (log_output != null) {            
-                console.log("here: " + event.data);
                 log_output.innerHTML += "<p>" + event.data + "</p>";
             }
         };
