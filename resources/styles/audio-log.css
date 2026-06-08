@@ -17,3 +17,17 @@
 #datetime-form-submit {
     text-align: center;
 }
+
+#log-retrieval-output {
+    height: 200px;
+    background-color: black;
+    color: green;
+    border: 2px white solid;
+    overflow: auto;
+    margin-bottom: 6px;
+    width: 550px;
+    text-wrap: nowrap;
+    padding-top: 4px;
+    padding-left: 5px;
+    text-align: left;
+}
