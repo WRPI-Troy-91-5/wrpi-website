@@ -4,6 +4,27 @@ header("Content-Type: text/event-stream");
 header("Cache-Control: no-cache");
 header("X-Accel-Buffering: no");
 
+//
+// Parameter Verification
+//
+$start_date = trim($_GET["start_date"]);
+$start_time = trim($_GET["start_time"]);
+$end_date   = trim($_GET["end_date"]);
+$end_time   = trim($_GET["end_time"]);
+
+// strtotime will only return an integer if the string value is really a time/date
+if (gettype(strtotime($start_date)) !== "integer" || gettype(strtotime($start_time)) !== "integer" ||
+    gettype(strtotime($end_date))   !== "integer" || gettype(strtotime($end_time)) !== "integer") {
+    echo "data: [ERR] Incorrectly formatted data was input. This should not happen.\n\n";
+    echo "data: [ERR] Contact the WRPI Web Administrator or Chief Engineer (wrpitroy.ce@gmail.com).\n\n";
+    echo "data: [EOF]\n\n";
+    exit;
+}
+
+//
+// Audio Log Retrieval
+//
+
 // Define the standard file descriptors
 $descriptors = [
     0 => ["pipe", "r"],
@@ -12,7 +33,7 @@ $descriptors = [
 ];
 
 // Open python script with popen in order to read the command line output of the script
-$process = proc_open("/bin/python ./retrieve_log.py " . $_GET["start_date"] . " " . $_GET["start_time"] . " " . $_GET["end_date"] . " " . $_GET["end_time"], $descriptors, $pipes);
+$process = proc_open("/bin/python ./retrieve_log.py " . $start_date . " " . $start_time . " " . $end_date . " " . $end_time, $descriptors, $pipes);
 
 // Handle if the process was not started correctly
 if (!is_resource($process)) {
