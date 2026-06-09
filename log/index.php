@@ -46,13 +46,14 @@ include("../.includes/header.inc.php");
             <button type="submit" name="submit">Submit</button>
         </div>
     </form>
+    <?php if(isset($_POST['start-date'])) { echo '
     <script>
         // Create query string to pass parameters to the helper
         const parameters = new URLSearchParams({
-            start_date: "<?php echo $_POST['start-date'] ?>",
-            start_time: "<?php echo $_POST['start-time'] ?>",
-            end_date:   "<?php echo $_POST['end-date'] ?>",
-            end_time:   "<?php echo $_POST['end-time'] ?>"
+            start_date: "' . $_POST['start-date'] . '",
+            start_time: "' . $_POST['start-time'] . '",
+            end_date:   "' . $_POST['end-date'] . '",
+            end_time:   "' . $_POST['end-time'] . '"
         });
 
         // Create an event source to get the script log from the server using server-sent event data
@@ -70,6 +71,7 @@ include("../.includes/header.inc.php");
             }
         };
     </script>
+    '; } ?>
 <?php
 include("../.includes/footer.inc.php");
 ?>
