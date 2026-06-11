@@ -18,6 +18,7 @@
 ###########
 import sys
 import os
+import tempfile
 from datetime import datetime, timedelta
 
 
@@ -109,5 +110,79 @@ if __name__ == "__main__":
     start_bound = strtodate_request(f'{sys.argv[1]}  {sys.argv[2]}')
     end_bound   = strtodate_request(f'{sys.argv[3]}  {sys.argv[4]}')
 
+    # Get list of log files that are within the bounds
     audio_logs = get_audio_logs((start_bound, end_bound))
-    print(audio_logs)
+    print(f"List of logs to process: {audio_logs}")
+
+    print("Creating a temporary folder for log processing...", end=" ")
+    temp = tempfile.mkdtemp()
+    print("Done")
+
+    print("Copying the audio logs to the temporary directory for processing...")
+    ret = os.system(f"cd /local-zfs/audio-log && cp -v {' '.join(audio_logs)} {temp}")
+    if (ret != 0):
+        quit(ret)
+    print("Done")
+
+    # If there are two or more clips the bounding clips will have to be cut/adjusted and recombined
+    if (len(audio_logs) >= 2):
+        # Find how many seconds into the first clip and from the end of the last clip need to be cut out
+        begin_cut_time = int(abs((start_bound-strtodate_file(audio_logs[0][:-4])).total_seconds()))
+        end_cut_time = int(abs((end_bound-strtodate_file(audio_logs[-1][:-4])).total_seconds()))
+        # The above time is just how much needs to be removed
+        # Need to calculate the total time of the new clip for processing
+
+        # Need to define a list to store the lost files caused by these operations
+        saved_logs = []
+        # Cut the beginning segment of the first log if needed
+        if (begin_cut_time != 0):
+            ret = os.system(f"cd {temp} && ffmpeg -ss {begin_cut_time} -i {audio_logs[0]} new_temp_start.mp3")
+            if (ret != 0):
+                quit(ret)
+            saved_logs.append(audio_logs[0])
+            audio_logs[0] = "new_temp_start.mp3"
+    
+        # Cut the end segment of the last log if needed
+        if (end_cut_time != 0):
+            ret = os.system(f"cd {temp} && ffmpeg -t {end_cut_time} -i {audio_logs[-1]} new_temp_end.mp3")
+            if (ret != 0):
+                quit(ret)
+            saved_logs.append(audio_logs[-1])
+            audio_logs[-1] = "new_temp_end.mp3"
+
+        # Combine the logs into a single file
+        ret = os.system(f"cd {temp} && ffmpeg -i 'concat:{'|'.join(audio_logs)}' -acodec copy ./{datetostr(start_bound)}-{datetostr(end_bound)}.mp3")    
+        if (ret != 0):
+            quit(ret)
+
+        # Prompt the user with the new file location
+        print(f"Output file location: {temp}/{datetostr(start_bound)}-{datetostr(end_bound)}.mp3")
+
+        # Remove the temp audio logs
+        ret = os.system(f"cd {temp} && rm -v {' '.join(audio_logs)} {' '.join(saved_logs)}")
+        if (ret != 0):
+            quit(ret)
+
+    # Case of a single log
+    elif (len(audio_logs) == 1):
+        # Find how many seconds to skip into and cut from the end of the single log
+        begin_cut_time = int(abs(strtodate_file(audio_logs[0][:-4])-start_bound).total_seconds())
+        end_cut_time = int(abs((end_bound-strtodate_file(audio_logs[0][:-4])).total_seconds()))
+        # Total segment = end bound - begin bound
+        total_time_segment = int((end_bound - start_bound).total_seconds())
+
+        # Use ffmpeg to seek into and cut from the end
+        ret = os.system(f"cd {temp} && ffmpeg -ss {begin_cut_time} -t {total_time_segment} -i {audio_logs[0]} ./{datetostr(start_bound)}-{datetostr(end_bound)}.mp3")
+        if (ret != 0):
+            quit(ret)
+
+        # Prompt the user for the location
+        print(f"Output file location: {temp}/{datetostr(start_bound)}-{datetostr(end_bound)}.mp3")
+
+    else:
+        print("No logs match your bound criteria") 
+
+    #print("Removing the created temporary folder")
+    #ret = os.system(f"rm -rf {temp}")
+    #if (ret != 0):
+    #    quit(ret)
