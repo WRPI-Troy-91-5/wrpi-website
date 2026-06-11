@@ -68,6 +68,7 @@ include("../.includes/header.inc.php");
             const log_output = document.getElementById("log-retrieval-output");
             if (log_output != null) {            
                 log_output.innerHTML += "<p>" + event.data + "</p>";
+                log_output.scrollTop = log_output.scrollHeight;
             }
         };
     </script>
