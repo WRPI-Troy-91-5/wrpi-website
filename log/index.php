@@ -46,7 +46,10 @@ include("../.includes/header.inc.php");
             <button type="submit" name="submit">Submit</button>
         </div>
     </form>
-    <?php if(isset($_POST['start-date'])) { echo '
+    <?php if(isset($_POST['start-date'])) { 
+    $filename = date('Y-m-d', strtotime(trim($_POST['start-date']))) . "-" . date('H-i-s', strtotime(trim($_POST['start-time'])));
+    $filename = $filename . "-" . date('Y-m-d', strtotime(trim($_POST['end-date']))) . "-" . date('H-i-s', strtotime(trim($_POST['end-time']))) . ".mp3";
+    echo '
     <script>
         // Create query string to pass parameters to the helper
         const parameters = new URLSearchParams({
@@ -63,6 +66,14 @@ include("../.includes/header.inc.php");
         eventSource.onmessage = (event) => {
             if (event.data == "[EOF]") {
                 eventSource.close();
+                // Redirect to download
+                //   - Creates a temp hyperlink with the download attribute
+                const download_link = document.createElement("a");
+                download_link.href = "/log/retrieved/'. $filename .'";
+                download_link.download = "' . $filename . '";
+                document.body.appendChild(download_link);
+                download_link.click();
+                document.body.removeChild(download_link);
                 return;
             }
             const log_output = document.getElementById("log-retrieval-output");
