@@ -187,8 +187,3 @@ if __name__ == "__main__":
 
     else:
         print("No logs match your bound criteria") 
-
-    #print("Removing the created temporary folder")
-    #ret = os.system(f"rm -rf {temp}")
-    #if (ret != 0):
-    #    quit(ret)
