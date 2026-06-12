@@ -155,8 +155,11 @@ if __name__ == "__main__":
         if (ret != 0):
             quit(ret)
 
-        # Prompt the user with the new file location
-        print(f"Output file location: {temp}/{datetostr(start_bound)}-{datetostr(end_bound)}.mp3")
+        # Move file to a downloadable directory
+        ret = os.system(f"mkdir -pv ./retrieved && mv -v {temp}/{datetostr(start_bound)}-{datetostr(end_bound)}.mp3 ./retrieved")
+        if (ret != 0):
+            quit(ret)
+        print(f"File: {datetostr(start_bound)}-{datetostr(end_bound)}.mp3")
 
         # Remove the temp audio logs
         ret = os.system(f"cd {temp} && rm -v {' '.join(audio_logs)} {' '.join(saved_logs)}")
@@ -176,8 +179,11 @@ if __name__ == "__main__":
         if (ret != 0):
             quit(ret)
 
-        # Prompt the user for the location
-        print(f"Output file location: {temp}/{datetostr(start_bound)}-{datetostr(end_bound)}.mp3")
+        # Move file to a downloadable directory
+        ret = os.system(f"mkdir -pv ./retrieved && mv -v {temp}/{datetostr(start_bound)}-{datetostr(end_bound)}.mp3 ./retrieved")
+        if (ret != 0):
+            quit(ret)
+        print(f"File: {datetostr(start_bound)}-{datetostr(end_bound)}.mp3")
 
     else:
         print("No logs match your bound criteria") 
