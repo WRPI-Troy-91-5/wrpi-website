@@ -11,7 +11,11 @@ include("../.includes/header.inc.php");
         </h1>
 
         <p class="main-subtitle">
-            Use this page to download a specific timeframe of audio from our vast audio log.
+            Use this page to download a specific timeframe of audio from our vast audio log.<br>
+        </p>
+        <p class="secondary-subtitle">
+            DO NOTE: There is a 6 hour maximum limit in terms of the length of the log you wish to request.<br>
+            If you wish to request anything longer than this, <a href="/contact">contact</a> a member of the WRPI ecomm!
         </p>
     </div>
     <!-- Main form -->
