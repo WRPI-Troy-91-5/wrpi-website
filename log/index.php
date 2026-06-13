@@ -68,7 +68,7 @@ include("../.includes/header.inc.php");
 
         // Handle messages from the server using this event source
         eventSource.onmessage = (event) => {
-            if (event.data == "[EOF]") {
+            if (event.data == "[EOF] 0") {
                 eventSource.close();
                 // Redirect to download
                 //   - Creates a temp hyperlink with the download attribute
@@ -78,6 +78,11 @@ include("../.includes/header.inc.php");
                 document.body.appendChild(download_link);
                 download_link.click();
                 document.body.removeChild(download_link);
+                return;
+            }
+            else if (event.data == "[EOF] 1") {
+                // Exit on error
+                eventSource.close();
                 return;
             }
             const log_output = document.getElementById("log-retrieval-output");

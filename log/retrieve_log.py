@@ -110,6 +110,12 @@ if __name__ == "__main__":
     start_bound = strtodate_request(f'{sys.argv[1]}  {sys.argv[2]}')
     end_bound   = strtodate_request(f'{sys.argv[3]}  {sys.argv[4]}')
 
+    # Confirm that the bounds are no longer than 6 hours apart
+    length = end_bound - start_bound
+    if (length > timedelta(hours=6)):
+        print(f"ERROR: No bounds may be entered over 6 hours apart, requested log length: {length}")
+        exit(1)
+
     # Get list of log files that are within the bounds
     audio_logs = get_audio_logs((start_bound, end_bound))
     print(f"List of logs to process: {audio_logs}")

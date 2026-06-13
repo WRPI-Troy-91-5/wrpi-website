@@ -75,8 +75,8 @@ while (true) {
 foreach ($pipes as $pipe) fclose($pipe);
 
 // CLose the process pipe
-proc_close($process);
+$retVal = proc_close($process);
 
 // Notify the PHP script that execution has completed
-echo "data: [EOF]\n\n";
+echo "data: [EOF] " . $retVal . "\n\n";
 ?>
