@@ -34,11 +34,11 @@ if (gettype(strtotime($start_date)) !== "integer" || gettype(strtotime($start_ti
 $descriptors = [
     0 => ["pipe", "r"],
     1 => ["pipe", "w"],
-    2 => ["pipe", "w"]
+    2 => ["redirect", 1]
 ];
 
 // Open python script with popen in order to read the command line output of the script
-$process = proc_open("/bin/python -u ./retrieve_log.py " . $start_date . " " . $start_time . " " . $end_date . " " . $end_time . " 2>&1", $descriptors, $pipes);
+$process = proc_open(["/bin/python", "-u", "./retrieve_log.py", $start_date, $start_time, $end_date, $end_time], $descriptors, $pipes);
 
 // Handle if the process was not started correctly
 if (!is_resource($process)) {
@@ -48,7 +48,6 @@ if (!is_resource($process)) {
 
 // Set output pipes to non-blocking to prevent halting when the pipe is not empty
 stream_set_blocking($pipes[1], false);
-stream_set_blocking($pipes[2], false);
 
 // Write the output of the command to the log output box
 while (true) {
