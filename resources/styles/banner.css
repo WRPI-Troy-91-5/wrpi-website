@@ -42,6 +42,12 @@
     padding: 0.25em;
 }
 
+/* Non-dropdown Button that is in the top banner */
+.bannerbtn {
+    text-decoration: none;
+    color: #c3c3c3 !important;
+}
+
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
     display: inline-block;

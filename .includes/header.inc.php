@@ -70,7 +70,15 @@
                 <a href="https://open.spotify.com/user/l3t5b5q04i15d795pxl4pb9hq" target="_blank">Spotify</a>
             </div>
         </div>
+
+        <div class="dropdown">
+            <a class="dropbtn bannerbtn" href="/log">Audio Log</a>
+        </div>
     </div>
+</div>
+
+<div class="alert-banner">
+    <p>We are currently off-air on FM due to some technical difficulties with our antenna. The webstream is still up and running for the time being. We're on it!</p>
 </div>
 
 <main class="content-wrapper">

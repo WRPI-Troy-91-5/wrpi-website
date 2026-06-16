@@ -1,0 +1,38 @@
+#datetime-form {
+    margin: 1.5em 1.5em 0;
+}
+
+#datetime-form-container {
+    display: flex;
+}
+
+#datetime-form-start, #datetime-form-end, #datetime-form {
+    width: fit-content;
+}
+
+#datetime-form-start {
+    margin-right: 48px;
+}
+
+#datetime-form-submit {
+    text-align: center;
+}
+
+#log-retrieval-output {
+    height: 200px;
+    background-color: black;
+    color: green;
+    border: 2px white solid;
+    overflow: auto;
+    margin-bottom: 6px;
+    width: 550px;
+    text-wrap: nowrap;
+    padding-top: 4px;
+    padding-left: 5px;
+    text-align: left;
+}
+
+.secondary-subtitle {
+    line-height: 1.3;
+    margin-top: 9px;
+}
