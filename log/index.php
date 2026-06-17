@@ -80,7 +80,7 @@ include("../.includes/header.inc.php");
                 document.body.removeChild(download_link);
                 return;
             }
-            else if (event.data == "[EOF] 1") {
+            else if (event.data.includes("[EOF]")) {
                 // Exit on error
                 eventSource.close();
                 return;
