@@ -82,6 +82,8 @@ include("../.includes/header.inc.php");
             }
             else if (event.data.includes("[EOF]")) {
                 // Exit on error
+                log_output.innerHTML += "<p>Exited with error code: " + event.data + "</p>";
+                log_output.scrollTop = log_output.scrollHeight;
                 eventSource.close();
                 return;
             }
