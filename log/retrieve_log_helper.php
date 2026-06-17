@@ -38,7 +38,7 @@ $descriptors = [
 ];
 
 // Open python script with popen in order to read the command line output of the script
-$process = proc_open(["/bin/python", "-u", "./retrieve_log.py", $start_date, $start_time, $end_date, $end_time], $descriptors, $pipes);
+$process = proc_open(["/bin/python3", "-u", "./retrieve_log.py", $start_date, $start_time, $end_date, $end_time], $descriptors, $pipes);
 
 // Handle if the process was not started correctly
 if (!is_resource($process)) {
