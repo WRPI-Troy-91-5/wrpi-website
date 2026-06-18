@@ -75,7 +75,7 @@ while (true) {
 foreach ($pipes as $pipe) fclose($pipe);
 
 // Get the return value from the script
-$retVal = proc_get_status();
+$retVal = proc_get_status($process);
 
 // CLose the process pipe
 proc_close($process);
