@@ -127,6 +127,7 @@ if __name__ == "__main__":
     print("Copying the audio logs to the temporary directory for processing...")
     ret = os.system(f"cd /local-zfs/audio-log && cp -v {' '.join(audio_logs)} {temp}")
     if (ret != 0):
+        print(f"Quitting on error code: {ret}")
         quit(ret)
     print("Done")
 
@@ -144,6 +145,7 @@ if __name__ == "__main__":
         if (begin_cut_time != 0):
             ret = os.system(f"cd {temp} && ffmpeg -ss {begin_cut_time} -i {audio_logs[0]} new_temp_start.mp3")
             if (ret != 0):
+                print(f"Quitting on error code: {ret}")
                 quit(ret)
             saved_logs.append(audio_logs[0])
             audio_logs[0] = "new_temp_start.mp3"
@@ -152,6 +154,7 @@ if __name__ == "__main__":
         if (end_cut_time != 0):
             ret = os.system(f"cd {temp} && ffmpeg -t {end_cut_time} -i {audio_logs[-1]} new_temp_end.mp3")
             if (ret != 0):
+                print(f"Quitting on error code: {ret}")
                 quit(ret)
             saved_logs.append(audio_logs[-1])
             audio_logs[-1] = "new_temp_end.mp3"
@@ -159,17 +162,20 @@ if __name__ == "__main__":
         # Combine the logs into a single file
         ret = os.system(f"cd {temp} && ffmpeg -i 'concat:{'|'.join(audio_logs)}' -acodec copy ./{datetostr(start_bound)}-{datetostr(end_bound)}.mp3")    
         if (ret != 0):
+            print(f"Quitting on error code: {ret}")
             quit(ret)
 
         # Move file to a downloadable directory
         ret = os.system(f"mkdir -pv ./retrieved && mv -v {temp}/{datetostr(start_bound)}-{datetostr(end_bound)}.mp3 ./retrieved")
         if (ret != 0):
+            print(f"Quitting on error code: {ret}")
             quit(ret)
         print(f"File: {datetostr(start_bound)}-{datetostr(end_bound)}.mp3")
 
         # Remove the temp audio logs
         ret = os.system(f"cd {temp} && rm -v {' '.join(audio_logs)} {' '.join(saved_logs)}")
         if (ret != 0):
+            print(f"Quitting on error code: {ret}")
             quit(ret)
 
     # Case of a single log
@@ -183,11 +189,13 @@ if __name__ == "__main__":
         # Use ffmpeg to seek into and cut from the end
         ret = os.system(f"cd {temp} && ffmpeg -ss {begin_cut_time} -t {total_time_segment} -i {audio_logs[0]} ./{datetostr(start_bound)}-{datetostr(end_bound)}.mp3")
         if (ret != 0):
+            print(f"Quitting on error code: {ret}")
             quit(ret)
 
         # Move file to a downloadable directory
         ret = os.system(f"mkdir -pv ./retrieved && mv -v {temp}/{datetostr(start_bound)}-{datetostr(end_bound)}.mp3 ./retrieved")
         if (ret != 0):
+            print(f"Quitting on error code: {ret}")
             quit(ret)
         print(f"File: {datetostr(start_bound)}-{datetostr(end_bound)}.mp3")
 
