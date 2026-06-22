@@ -74,12 +74,9 @@ while (true) {
 // Close the standard pipes
 foreach ($pipes as $pipe) fclose($pipe);
 
-// Get the return value from the script
-$retVal = proc_get_status($process);
-
 // CLose the process pipe
 proc_close($process);
 
 // Notify the PHP script that execution has completed
-echo "data: [EOF] " . $retVal['exitcode'] . "\n\n";
+echo "data: [EOF] " . $status['exitcode'] . "\n\n";
 ?>
