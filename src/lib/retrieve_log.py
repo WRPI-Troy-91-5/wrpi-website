@@ -166,7 +166,7 @@ if __name__ == "__main__":
             quit(ret)
 
         # Move file to a downloadable directory
-        ret = os.system(f"mkdir -pv ./retrieved && mv -v {temp}/{datetostr(start_bound)}-{datetostr(end_bound)}.mp3 ./retrieved")
+        ret = os.system(f"mkdir -pv ./src/routes/download/retrieved && mv -v {temp}/{datetostr(start_bound)}-{datetostr(end_bound)}.mp3 ./src/routes/download/retrieved")
         if (ret != 0):
             print(f"Quitting on error code: {ret}")
             quit(ret)
@@ -193,7 +193,7 @@ if __name__ == "__main__":
             quit(ret)
 
         # Move file to a downloadable directory
-        ret = os.system(f"mkdir -pv ./retrieved && mv -v {temp}/{datetostr(start_bound)}-{datetostr(end_bound)}.mp3 ./retrieved")
+        ret = os.system(f"mkdir -pv ./src/routes/download/retrieved && mv -v {temp}/{datetostr(start_bound)}-{datetostr(end_bound)}.mp3 ./src/routes/download/retrieved")
         if (ret != 0):
             print(f"Quitting on error code: {ret}")
             quit(ret)

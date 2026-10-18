@@ -1,6 +1,6 @@
 /.idea/
 /.vscode/
-/log/retrieved/
+/src/routes/download/retrieved/
 node_modules
 
 # Output
