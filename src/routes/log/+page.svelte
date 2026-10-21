@@ -1,19 +1,29 @@
 <script>
+
+	// States to store date and time info from form in real time
 	let startTime = $state('')
 	let startDate = $state('')
 	let endTime = $state('')
 	let endDate = $state('')
 	let consoleState = $state(false)
+
+	// Interrupts form submission to start and receive download
 	async function handleSubmit(event) {
+		// Prevents normal form submission
 		event.preventDefault();
-		console.log("runs the function")
+		// Enables the browser console window to show python script output
 		consoleState = true;
-		// echo "<p>Retrieving audio from " . $_POST["start-date"] . " " . $_POST["start-time"] . " to " . $_POST["end-date"] . " " . $_POST["end-time"] . "...</p>";
+
+		// Assigns the filename based on immediate data in case user changes form during download
+		const filename = startDate + '-' + startTime.slice(0,2) + '-' + startTime.slice(3,5) + "-00-" + endDate + '-' + endTime.slice(0,2) + '-' + endTime.slice(3,5) + "-00.mp3"
+
+		// Adds an initial message to the console
 		let initial_message = document.createElement('p')
 		initial_message.innerText = 'Retrieving audio from ' + startDate + ' ' + startTime + " to " + endDate + ' ' + endTime +  '...'
 		document.getElementById('log-retrieval-output').appendChild(initial_message)
 
 		try { 
+			// Post request to run the python script with parameters and receive console output stream
 			const stream = await fetch("/log", {
 				method: "POST",
 				body: JSON.stringify({
@@ -22,36 +32,25 @@
 					'end-date': endDate,
 					'end-time': endTime
 				})
-				//body: new FormData(event.target),
-			})/*.then(async (res) => {
-				console.log("Getting Reader...")
-				let data = res.body.getReader()
-				consoleState = true
-				console.log("Reading Output...")
-				let output = await data.read()
-				console.log("Output: ", output)
-				let line = document.createElement('p')
-				line.innerText = line.innerText + output
-				document.getElementById('log-retrieval-output').appendChild(line)
-				//document.getElementById('log-retrieval-output').innerHTML = document.getElementById('console_window').innerHTML + output
-				console.log("Added to HTML")
-			})*/
+			})
+			// Decoder translates unicode data to console output
 			const decoder = new TextDecoder();
 			let data = stream.body.getReader()
 			let done = false
-			console.log("Reading output...")
+			// Adds incoming data to the console window until stream finish flag is sent
 			while (!done) {
 				const output = await data.read()
-				console.log("Output: ", output)
 				if (output.done) { done = true}
 				const text = decoder.decode(output.value)
 				let line = document.createElement('p')
 				line.innerText = text
-				document.getElementById('log-retrieval-output').appendChild(line)
+				let log_output = document.getElementById('log-retrieval-output')
+				log_output.appendChild(line)
+				log_output.scrollTop = log_output.scrollHeight
+
 			}
-			console.log(stream)
-			console.log('fetch finished')
-			const filename = startDate + '-' + startTime.slice(0,2) + '-' + startTime.slice(3,5) + "-00-" + endDate + '-' + endTime.slice(0,2) + '-' + endTime.slice(3,5) + "-00.mp3"
+
+			// Download link is created using filename from earlier and /download/ route
 			const download_link = document.createElement("a");
 			download_link.href = "/download/" + filename;
 			download_link.download = filename;
@@ -60,6 +59,7 @@
 			document.body.removeChild(download_link);
 
 		} catch (DOMException) {
+			// If the request fails an error message is printed to the console window on the page
 			console.log("Request never finished")
 			let error_message = document.createElement('p')
 			error_message.innerText = "Error fetching console output, please standby for file download. \nIf the file download does not start within a reasonable amount of time please try again."
@@ -68,48 +68,8 @@
 		}
 		
 
-		console.log('finished the function')
 	}
 
-	// Create query string to pass parameters to the helper
-	/*const parameters = new URLSearchParams({
-		start_date: "' . $_POST['start-date'] . '",
-		start_time: "' . $_POST['start-time'] . '",
-		end_date:   "' . $_POST['end-date'] . '",
-		end_time:   "' . $_POST['end-time'] . '"
-	});
-
-	// Create an event source to get the script log from the server using server-sent event data
-	const eventSource = new EventSource("/log/retrieve_log_helper.php?" + parameters);
-
-	// Handle messages from the server using this event source
-	eventSource.onmessage = (event) => {
-		if (event.data == "[EOF] 0") {
-			eventSource.close();
-			// Redirect to download
-			//   - Creates a temp hyperlink with the download attribute
-			const download_link = document.createElement("a");
-			download_link.href = "/log/retrieved/'. $filename .'";
-			download_link.download = "' . $filename . '";
-			document.body.appendChild(download_link);
-			download_link.click();
-			document.body.removeChild(download_link);
-			return;
-		}
-		else if (event.data.includes("[EOF]")) {
-			// Exit on error
-			const log_output = document.getElementById("log-retrieval-output");
-			log_output.innerHTML += "<p>Exited with error code: " + event.data + "</p>";
-			log_output.scrollTop = log_output.scrollHeight;
-			eventSource.close();
-			return;
-		}
-		const log_output = document.getElementById("log-retrieval-output");
-		if (log_output != null) {            
-			log_output.innerHTML += "<p>" + event.data + "</p>";
-			log_output.scrollTop = log_output.scrollHeight;
-		}
-	};*/
 </script>
 
 
@@ -149,16 +109,6 @@
 
 	<br><br>
 	<div id="datetime-form-submit">
-		<!--<?php
-		if(isset($_POST['start-date'])) {
-			//
-			// Process Form Input Here
-			//
-			echo "<p>Retrieving audio from " . $_POST["start-date"] . " " . $_POST["start-time"] . " to " . $_POST["end-date"] . " " . $_POST["end-time"] . "...</p>";
-			echo "<div id='log-retrieval-output'></div>";
-			
-		}
-		?>-->
 		<div id='log-retrieval-output' class={consoleState ? "block" : "hidden"}></div>
 		<button type="submit">Submit</button>
 	</div>
